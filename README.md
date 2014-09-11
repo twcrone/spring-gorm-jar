@@ -12,12 +12,14 @@ Out put should be:
 
 ```
 Hello World!
+Hello Groovy DSL!
 1
 ```
 
 Output illustrates:
 
 1.  Spring core present for auto-wiring dependencies.
-2.  GORM can persist `Person` in H2 and an `id` is assigned.
+2.  Groovy DSL used for dependency injection
+3.  GORM can persist `Person` in H2 and an `id` is assigned.
 
 Much more to do...

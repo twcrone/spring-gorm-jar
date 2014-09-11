@@ -24,7 +24,9 @@ class Application {
           new AnnotationConfigApplicationContext(Application.class)
       def gcontext = new GenericGroovyApplicationContext("file:config/resources.groovy");
       def printer = context.getBean(MessagePrinter.class)
+      def gprinter = gcontext.getBean('messagePrinter')
       printer.printMessage()
+      gprinter.printMessage()
 
       def p = new Person(firstName: 'Todd', lastName: 'Crone').save()
 
