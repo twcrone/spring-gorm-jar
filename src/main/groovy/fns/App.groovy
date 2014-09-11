@@ -14,15 +14,9 @@ class App {
         println "HEY"
         def ctx = getDefaultServiceContext()
         def service = ctx.getPersonService()
-        service.save(new Person())
-//      def printer = context.getMessagePrinter()
-//      printer.printMessage()
-
-//      def service = context.getPersonService()
-//      def person = service.save(new Person(firstName: 'Groovy', lastName: 'Person'))
-//      def groovyPerson = service.get(person.id)
-//
-//      println "Groovy Person with ID=${groovyPerson.id}"
+        def p = new Person(firstName: 'Todd', lastName: 'Crone')
+        service.save(p)
+        println "PID=${p.id}"
     }
 
     static ServiceContext getDefaultServiceContext() {
