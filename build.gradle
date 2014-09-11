@@ -7,6 +7,14 @@ mainClassName = "hello.Application"
 jar {
     baseName = 'fns-gorm'
     version =  '1.0-SNAPSHOT'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
 }
 
 repositories {

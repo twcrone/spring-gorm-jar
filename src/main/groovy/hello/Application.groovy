@@ -2,10 +2,7 @@ package hello
 
 import ext.DefaultServiceContext
 
-//import org.springframework.context.ApplicationContext
-import org.springframework.context.support.GenericGroovyApplicationContext;
 import org.springframework.context.annotation.*
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 
 @EnableAutoConfiguration
