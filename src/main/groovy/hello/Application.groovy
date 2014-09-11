@@ -1,6 +1,7 @@
 package hello
 
 //import org.springframework.context.ApplicationContext
+import org.springframework.context.support.GenericGroovyApplicationContext;
 import org.springframework.context.annotation.*
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
@@ -21,6 +22,7 @@ class Application {
   public static void main(String[] args) {
       def context =
           new AnnotationConfigApplicationContext(Application.class)
+      def gcontext = new GenericGroovyApplicationContext("file:config/resources.groovy");
       def printer = context.getBean(MessagePrinter.class)
       printer.printMessage()
 
