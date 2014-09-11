@@ -1,21 +1,15 @@
 package fns
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
-import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan
 
 @ComponentScan
 @EnableAutoConfiguration
 class App {
 
-    public static ServiceContext getDefaultServiceContext() {
-        def ctx = new AnnotationConfigApplicationContext(App.class)
-        return new DefaultServiceContext(ctx)
-    }
-
     public static void main(String[] args) {
         println "HEY"
-        def ctx = getDefaultServiceContext()
+        def ctx = DefaultServiceContext.defaultInstance
         def service = ctx.getPersonService()
         service.save(new Person())
 //      def printer = context.getMessagePrinter()
