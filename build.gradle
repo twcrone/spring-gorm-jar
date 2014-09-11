@@ -1,4 +1,7 @@
 apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = "hello.Application"
 
 jar {
     baseName = 'fns-gorm'
@@ -13,4 +16,5 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.8.2'
     compile 'org.codehaus.groovy:groovy-all:2.3.6'
+    compile 'org.springframework:spring-context:4.1.0.RELEASE'
 }
