@@ -1,5 +1,7 @@
 package hello
 
+import ext.DefaultServiceContext
+
 //import org.springframework.context.ApplicationContext
 import org.springframework.context.support.GenericGroovyApplicationContext;
 import org.springframework.context.annotation.*
@@ -22,9 +24,9 @@ class Application {
   public static void main(String[] args) {
       def context =
           new AnnotationConfigApplicationContext(Application.class)
-      def gcontext = new GenericGroovyApplicationContext("file:config/resources.groovy");
+      def gcontext = new DefaultServiceContext()
       def printer = context.getBean(MessagePrinter.class)
-      def gprinter = gcontext.getBean('messagePrinter')
+      def gprinter = gcontext.getMessagePrinter()
       printer.printMessage()
       gprinter.printMessage()
 
@@ -32,7 +34,7 @@ class Application {
 
       println "Person with ID=${p.id}"
 
-      def service = gcontext.getBean('personService')
+      def service = gcontext.getPersonService()
       p = service.save(new Person(firstName: 'Groovy', lastName: 'Person'))
       def groovyPerson = service.get(p.id)
 
