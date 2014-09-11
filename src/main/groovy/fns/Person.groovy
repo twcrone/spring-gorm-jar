@@ -1,0 +1,4 @@
+package fns
+
+class Person {
+}

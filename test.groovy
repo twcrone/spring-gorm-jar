@@ -1,4 +1,4 @@
-import ext.DefaultServiceContext
+import fns.DefaultServiceContext
 import hello.*
 
 def gcontext = new DefaultServiceContext()
