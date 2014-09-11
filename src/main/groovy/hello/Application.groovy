@@ -30,6 +30,12 @@ class Application {
 
       def p = new Person(firstName: 'Todd', lastName: 'Crone').save()
 
-      println "${p.id}"
+      println "Person with ID=${p.id}"
+
+      def service = gcontext.getBean('personService')
+      p = service.save(new Person(firstName: 'Groovy', lastName: 'Person'))
+      def groovyPerson = service.get(p.id)
+
+      println "Groovy Person with ID=${groovyPerson.id}"
   }
 }

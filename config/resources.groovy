@@ -6,5 +6,5 @@ beans {
 
     messagePrinter(hello.MessagePrinter, ref('messageService'))
 
-
+    personService(hello.GormPersonService)
 }
