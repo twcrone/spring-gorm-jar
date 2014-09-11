@@ -5,19 +5,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 class DefaultServiceContext implements ServiceContext {
 
-    static instance
-
     ApplicationContext applicationContext
 
-    static ServiceContext getDefaultInstance() {
-        if(instance == null) {
-            def ctx = new AnnotationConfigApplicationContext(App.class)
-            instance = new DefaultServiceContext(ctx)
-        }
-        return instance
-    }
-
-    private DefaultServiceContext(ApplicationContext applicationContext) {
+    DefaultServiceContext(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext
     }
 
