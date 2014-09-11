@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+
+jar {
+    baseName = 'fns-gorm'
+    version =  '1.0-SNAPSHOT'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.8.2'
+    compile 'org.codehaus.groovy:groovy-all:2.3.6'
+}
