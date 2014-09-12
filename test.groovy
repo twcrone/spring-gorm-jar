@@ -1,6 +1,8 @@
-import fns.App
-import fns.Person
+import blah.App
+import blah.Person
 
-ctx = App.defaultServiceContext
-service = ctx.personService
-service.save(new Person())
+ctx = App.getDefaultServiceContext()
+service = ctx.getPersonService()
+p = new Person(firstName: 'Todd', lastName: 'Crone')
+service.save(p)
+println "Person saved with ID=${p.id}"

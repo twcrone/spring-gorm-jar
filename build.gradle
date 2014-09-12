@@ -2,10 +2,10 @@ apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'application'
 
-mainClassName = "fns.App"
+mainClassName = "blah.App"
 
 jar {
-    baseName = 'fns-gorm'
+    baseName = 'blah-gorm'
     version =  '1.0-SNAPSHOT'
     from {
         configurations.compile.collect {

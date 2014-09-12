@@ -1,4 +1,4 @@
-package fns
+package blah
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
@@ -11,12 +11,11 @@ class App {
     static ServiceContext defaultServiceContext
 
     public static void main(String[] args) {
-        println "HEY"
         def ctx = getDefaultServiceContext()
         def service = ctx.getPersonService()
         def p = new Person(firstName: 'Todd', lastName: 'Crone')
         service.save(p)
-        println "PID=${p.id}"
+        println "Person saved with ID=${p.id}"
     }
 
     static ServiceContext getDefaultServiceContext() {

@@ -1,4 +1,4 @@
-package fns
+package blah
 
 import grails.persistence.*
 

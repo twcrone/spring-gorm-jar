@@ -8,20 +8,35 @@ From project root, simply run:
 
 `gradle run`
 
-Out put should be:
+Output should be:
 
 ```
-Hello World!
-Hello Groovy DSL!
-Person with ID=1
-Groovy Person with ID=2
+Person saved with ID=1
 ```
 
 Output illustrates:
 
 1.  Spring core present for auto-wiring dependencies.
-2.  Groovy DSL used for dependency injection
-3.  GORM can persist `Person` in H2 and an `id` is assigned.
-4.  A service that can be exposed outside JAR.
+2.  GORM can persist `Person` in H2 and an `id` is assigned.
 
-Much more to do...
+Now try packaging as a 'fat' JAR and run similarly...
+
+```
+gradle clean build
+groovy -cp build/libs/blah-gorm-1.0-SNAPSHOT.jar test.groovy
+```
+
+
+Here is current stacktrace on this:
+
+```
+[main] INFO org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7a2145e6: startup date [Fri Sep 12 11:23:34 EDT 2014]; root of context hierarchy
+Caught: java.lang.IllegalStateException: Method on class [blah.Person] was used outside of a Grails application. If running in the context of a test using the mocking API or bootstrap Grails correctly.
+java.lang.IllegalStateException: Method on class [blah.Person] was used outside of a Grails application. If running in the context of a test using the mocking API or bootstrap Grails correctly.
+	at blah.Person.currentGormInstanceApi(Person.groovy)
+	at blah.Person.save(Person.groovy)
+	at blah.Person$save.call(Unknown Source)
+	at blah.PersonService.save(PersonService.groovy:9)
+	at blah.PersonService$save.call(Unknown Source)
+	at test.run(test.groovy:6)
+```
