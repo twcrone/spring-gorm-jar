@@ -26,11 +26,15 @@ gradle clean build
 groovy -cp build/libs/blah-gorm-1.0-SNAPSHOT.jar test.groovy
 ```
 
+or for second step build the Java 'runner' file and run:
+```
+javac -cp build/libs/blah-gorm-1.0-SNAPSHOT.jar:. Test.java
+java -cp build/libs/blah-gorm-1.0-SNAPSHOT.jar:. Test
+```
 
 Here is current stacktrace on this:
 
 ```
-groovy -cp build/libs/blah-gorm-1.0-SNAPSHOT.jar test.groovy
 [main] INFO org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@595c9dcd: startup date [Fri Sep 12 12:20:52 EDT 2014]; root of context hierarchy
 Caught: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: No namespace handler found for URI: http://www.springframework.org/schema/context
 Offending resource: Groovy
