@@ -1,8 +1,8 @@
 Spring GORM JAR
 ===============
 
-Very rough attempt at using GORM with minimal Spring/Hibernate support in
-stand-alone JAR.
+Very rough attempt at using GORM with minimal Spring/Hibernate support in a JAR used by another application for its
+persistence layer.
 
 From project root, simply run:
 
