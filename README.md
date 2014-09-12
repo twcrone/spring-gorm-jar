@@ -1,5 +1,5 @@
-FNS GORM POC
-============
+Spring GORM JAR
+===============
 
 Very rough attempt at using GORM with minimal Spring/Hibernate support in
 stand-alone JAR.
